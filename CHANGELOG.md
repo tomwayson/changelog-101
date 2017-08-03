@@ -1,7 +1,12 @@
-# Open Data Admin Change Log
+# Change Log
 All notable changes to this project will be documented in this file.
 Since this project represents the second version of the Open Data Admin app, versions start at 2.0.0
 This project adheres to [Semantic Versioning](http://semver.org/).
+
+## Unreleased
+
+### Changed
+- updated title of changelog
 
 ## 0.1.0
 
