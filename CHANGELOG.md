@@ -4,6 +4,7 @@ Since this project represents the second version of the Open Data Admin app, ver
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
+- cleaning up after tom's speedy fingers on the off chance i rip off this awesome presentation someday (john)
 
 ### Changed
 - updated title of changelog
