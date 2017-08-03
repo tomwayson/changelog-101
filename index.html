@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+  <title>Big</title>
+  <link href='big.css' rel='stylesheet' type='text/css' />
+  <link href='highlight.css' rel='stylesheet' type='text/css' />
+  <style>
+    .new-shiny { background: #aaaaaa; }
+    .nobreak {
+      white-space: pre;
+    }
+    body {
+      --light-orange: #e8912e;
+      --light-blue: #56a5d8;
+      --light-gray: #a9a9a9;
+      --light-yellow: #efe397;
+      --light-green: #9bc19c;
+    }
+    img.inline {
+      height: 1em;
+      width: 1em;
+    }
+    body.talk-mode del {
+      color: var(--light-gray);
+    }
+    body.talk-mode em {
+      color: var(--light-yellow);
+    }
+    body.talk-mode a {
+      color: var(--light-blue);
+    }
+    body.talk-mode .semver small {
+      color: var(--light-gray);
+      font-size: inherit;
+    }
+    body.talk-mode .audience blockquote, body.talk-mode .audience small {
+      color: var(--light-orange);
+    }
+    body.talk-mode .package-types small {
+      color: var(--light-gray);
+    }
+    body.talk-mode .changelogs-for small {
+      color: var(--light-orange);
+    }
+    body.talk-mode .example h3 {
+      color: var(--light-green);
+    }
+  </style>
+  <script src='big.js'></script>
+  <script src='highlight.js'></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body class='dark'>
+  <div>
+    <p class="nobreak">CHANGELOG 101</p>
+  </div>
+  <div>
+    <p class="nobreak">CHANGELOG <del>101</del></p>
+  </div>
+  <div>How U CHANGLEOG?</div>
+  <div>
+    <p class="nobreak">For each <em>version</em>, what did you:</p>
+    <ul>
+      <li>fix?</li>
+      <li>add?</li>
+      <li>break?</li>
+    </ul>
+  </div>
+  <div>
+    Follow <a href="http://semver.org/">semver</a>
+    MAJOR.MINOR.PATCH
+    <code>2.14.1</code>
+  </div>
+  <div class="semver">
+    Follow <a href="http://semver.org/">semver</a>
+    MAJOR.MINOR.PATCH
+    <small>(BREAK).(ADD).(FIX)</small>
+  </div>
+  <div>
+    <pre class="markdown hljs">
+## 0.6.0
+
+### Added
+- a feature that was added
+
+### Fixed
+- a bug that was fixed
+
+### Changed
+- other, non-bug releated changes
+
+### Removed
+- remove funcitonality (could be BREAKING CHANGE) or files
+    </pre>
+  </div>
+  <div>
+    WIP goes under <code class="markdown hljs">#Unreleased</code>
+  </div>
+  <div class="example">
+    <h3>Mike's CHANGELOG entry:</h3>
+    <pre class="markdown hljs">
+## Unreleased
+
+### Added
+- a new capability related to a feature/enhancement
+
+### Fixed
+- a change related to a bug (by Mike)
+
+## 2.23.1
+...
+    </pre>
+  </div>
+  <div class="example">
+    <h3>Marvin's CHANGELOG entry:</h3>
+    <pre class="markdown hljs">
+## Unreleased
+
+### Fixed
+- a change related to a bug (by Marvin)
+
+## 2.23.1
+...
+    </pre>
+  </div>
+  <div class="example">
+    <h3>Merged entry:</h3>
+    <pre class="markdown hljs">
+## Unreleased
+
+### Added
+- a new capability related to a feature/enhancement
+
+### Fixed
+- a change related to a bug (by Mike)
+- a change related to a bug (by Marvin)
+
+## 2.23.1
+...
+    </pre>
+  </div>
+  <div class="example">
+    <h3>Final (release) entry:</h3>
+    <pre class="markdown hljs">
+## 2.24.0
+
+### Added
+- a new capability related to a feature/enhancement
+
+### Fixed
+- a change related to a bug (by Mike)
+- a change related to a bug (by Marvin)
+
+## 2.23.1
+...
+    </pre>
+  </div>
+  <div>
+    Why U make me CHANGELOG?
+  </div>
+  <div class="monorepo">
+    <del>Don't</del>
+    <p class="nobreak">fear the</p>
+    monorepo <img src="images/Hopstarter-Halloween-Avatars-Grim-Reaper.ico" class="inline" />
+  </div>
+  <div>
+    Many packages each with <em>own</em> changelog
+  </div>
+  <div class="package-types">
+    <p class="nobreak">Apps <small>(opendata-*)</small></p>
+    <p class="nobreak">Addons <small>(ember-*)</small></p>
+  </div>
+  <div>
+    Bug fix / feature changes may touch <em>multiple</em> packages
+  </div>
+  <div class="audience">
+    <p>Who's this for?</p>
+    <small>What questions are they trying to answer?</small>
+  </div>
+  <div class="audience">
+    <p class="nobreak">Typically lib consumers</p>
+    <blockquote>Will release fix my bug? What will break if I upgrade? Are new features worth it?</blockquote>
+  </div>
+  <div class="audience">
+    <p class="nobreak">1) Person doing release</p>
+    <blockquote>What version number should I use for this package?</blockquote>
+  </div>
+  <div class="audience">
+    <p>2) Person writing <a href="http://hub.arcgis.com/pages/changelog" targe="_blank">public changelog</a></p>
+    <blockquote>In human terms, what's in this release?</blockquote>
+  </div>
+  <div class="audience">
+    <p class="nobreak">3) Rest of our team</p>
+    <blockquote>When did we add that feature / fix that bug?</blockquote>
+  </div>
+  <div class="changelogs-for">
+    <p class="nobreak">Addon changelogs</p>
+    <small>for person doing release</small>
+  </div>
+  <div class="changelogs-for">
+    <p class="nobreak">App changelogs</p>
+    <small>for person writing public changelog</small>
+  </div>
+  <div class="example">
+    <h3>Examples</h3>
+  </div>
+  <div class="example">
+    <h3>New Feature (app and addon code changes)</h3>
+    <pre class="markdown hljs">
+// addon CHANGELOG
+## Unreleased
+
+### Added
+- added map card
+
+## 0.5.0
+...
+    </pre>
+  </div>
+  <div class="example">
+    <h3>New Feature (app and addon code changes)</h3>
+    <pre class="markdown hljs">
+// app CHANGELOG
+## Unreleased
+
+### Added
+- added map card
+ (https://esriarlington.tpondemand.com/entity/123456)
+
+## 2.14.0
+...
+    </pre>
+  </div>
+  <div class="example">
+    <h3>Bug Fix (addon code only)</h3>
+    <pre class="markdown hljs">
+// addon CHANGELOG
+## Unreleased
+
+### Fixed
+- broken header nav styles in IE
+
+## 0.5.0
+...
+    </pre>
+    <small><a href="https://github.com/ArcGIS/opendata-ui/pull/1599/files" target="_blank">Example</a></small>
+  </div>
+  <div class="example">
+    <h3>Bug Fix (addon code only)</h3>
+    <pre class="markdown hljs">
+// app CHANGELOG
+## Unreleased
+
+### Fixed
+- broken header nav styles in IE
+ (https://esriarlington.tpondemand.com/entity/123456)
+
+## 2.14.0
+...
+<small><a href="https://github.com/ArcGIS/opendata-ui/pull/1599/files" target="_blank">Example</a></small>
+    </pre>
+  </div>
+  <div class="example">
+    <h3>Bug Fix (app and addon code changes)</h3>
+    <pre class="markdown hljs">
+// addon CHANGELOG
+## Unreleased
+
+### Added
+- add `user` option to `getEvents()`
+
+## 0.5.0
+...
+    </pre>
+  </div>
+  <div class="example">
+    <h3>Bug Fix (app and addon code changes)</h3>
+    <pre class="markdown hljs">
+// app CHANGELOG
+## Unreleased
+
+### Fixed
+- bug showing current (instead of selected) user's events
+ (https://esriarlington.tpondemand.com/entity/123456)
+
+## 2.14.0
+...
+    </pre>
+  </div>
+  <div>
+    When U no CHANGELOG?
+  </div>
+  <div>
+    Bug / feature you're working on <em>already</em> has an entry in <code class="markdown hljs">## Unreleased</code>
+  </div>
+  <div>
+    Why U no make <img src="images/Robot_Emoji_Icon_abe1111a-1293-4668-bdf9-9ceb05cff58e_grande.png" class="inline" /> do CHANGELOG?
+  </div>
+  <div>
+    Do we <em>really</em> have to do all that?
+  </div>
+  <div>
+    No, <a href="https://github.com/ArcGIS/opendata-ui/commit/caa2f05f441a9f9e331e0ba107402eb09e01d0fd" target="_blank">but...</a>
+  </div>
+  <div>
+    Discuss
+  </div>
+</body>
+</html>
